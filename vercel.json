@@ -1,0 +1,14 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "nextjs",
+  "cleanUrls": true,
+  "headers": [
+    {
+      "source": "/feed.xml",
+      "headers": [
+        { "key": "cache-control", "value": "public, s-maxage=3600, stale-while-revalidate=86400" },
+        { "key": "content-type", "value": "application/xml; charset=utf-8" }
+      ]
+    }
+  ]
+}

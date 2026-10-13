@@ -1,0 +1,11 @@
+node_modules
+.next
+out
+.env*.local
+.vercel
+*.log
+.DS_Store
+dist
+
+# local tooling
+.claude

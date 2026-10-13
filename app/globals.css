@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+  background: #fff;
+  color: #242e39;
+}
+
+body { -webkit-font-smoothing: antialiased; }
+
+.tnum { font-variant-numeric: tabular-nums; }
+
+@layer components {
+  .container-site { @apply mx-auto w-full max-w-site px-4 lg:px-6; }
+
+  .micro { @apply text-[11px] font-semibold uppercase tracking-[0.14em] text-ink-meta; }
+  .eyebrow { @apply text-xs font-semibold uppercase tracking-[0.16em] text-accent; }
+  .h-display { @apply font-display font-medium tracking-tight text-ink; }
+
+  .btn { @apply inline-flex h-[46px] items-center justify-center gap-2 rounded-[3px] px-6 text-sm font-semibold transition-colors; }
+  .btn-accent { @apply btn bg-accent text-white hover:bg-accent-strong; }
+  .btn-buy { @apply btn bg-buy text-white hover:bg-buy-hover; }
+  .btn-ghost { @apply btn border border-accent bg-white text-accent hover:bg-tint; }
+  .btn-dark { @apply btn bg-white text-ink hover:bg-surface-2; }
+
+  .panel { @apply rounded-panel bg-tint; }
+  .card { @apply rounded-[4px] border border-line bg-white; }
+
+  .link { @apply text-accent underline decoration-line-strong underline-offset-2 hover:decoration-accent; }
+
+  .prose-sg { @apply max-w-3xl text-[15px] leading-7 text-ink-body; }
+  .prose-sg h2 { @apply mt-10 mb-3 font-display text-2xl font-medium text-ink; }
+  .prose-sg h3 { @apply mt-6 mb-2 font-semibold text-ink; }
+  .prose-sg p { @apply mb-4; }
+  .prose-sg ul { @apply mb-4 list-disc space-y-1.5 pl-5; }
+  .prose-sg a { @apply link; }
+}
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { scrollbar-width: none; }
