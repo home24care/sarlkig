@@ -182,7 +182,7 @@ const baseCollections: Collection[] = [
     description: "Factory-sealed refrigerant cylinders and cans for HVAC, commercial refrigeration and automotive A/C.",
     match: (p) => p.category === "refrigerant" },
   { slug: "bulk-pallets", name: "Pallets & bulk packs", group: "Bulk & packs", eyebrow: "Bulk & packs",
-    description: "5 to 40 cylinders on one order line, priced per cylinder below the single rate.",
+    description: "5 to 40 cylinders of one refrigerant on a single order line, shipped together as freight.",
     match: isPack },
   { slug: "maintenance-supplies", name: "Cleaners & tools", group: "Supplies", eyebrow: "Supplies",
     description: "System flushes, cleaners and gauges for service work.",

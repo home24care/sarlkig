@@ -12,6 +12,7 @@ export default function ContactPage() {
     url: site.url,
     email: site.email,
     telephone: site.phone,
+    address: site.postalAddress,
     contactPoint: { "@type": "ContactPoint", contactType: "customer service", email: site.email, telephone: site.phone, areaServed: "US", availableLanguage: "English" },
   };
   return (

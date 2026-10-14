@@ -3,6 +3,7 @@ import ProductCard from "@/components/ProductCard";
 import { Icon } from "@/components/icons";
 import Stars from "@/components/Stars";
 import ReviewsSection from "@/components/ReviewsSection";
+import FeatureSplit from "@/components/FeatureSplit";
 import { reviewStats } from "@/lib/reviews";
 import { products, gases, gasSlug, getProduct, inCollection } from "@/lib/products";
 
@@ -81,7 +82,7 @@ export default function Home() {
             <TypeCard href="/collections/water-heaters" img={hero.image} title="Water heaters" text="Rinnai & Navien tankless, hybrid and heat pump units — indoor and outdoor, NG and LP." cta="Shop water heaters" tag="Water heating" />
             <TypeCard href="/collections/boilers" img={boilerImg} title="Boilers & combis" text="Wall-hung condensing boilers and combi units for hydronic heat and hot water." cta="Shop boilers" />
             <TypeCard href="/collections/refrigerants" img={singleImg} title="Single cylinders" text="Every refrigerant we stock, one cylinder or can at a time." cta="Shop cylinders" tag="Refrigerants" />
-            <TypeCard href="/collections/bulk-pallets" img={packImg} title="Packs & pallets" text="5 to 40 cylinders on one order line, priced per cylinder below the single rate." cta="Shop packs" />
+            <TypeCard href="/collections/bulk-pallets" img={packImg} title="Packs & pallets" text="5 to 40 cylinders of one refrigerant on a single order line, shipped together as freight." cta="Shop packs" />
           </div>
         </div>
       </section>
@@ -122,54 +123,42 @@ export default function Home() {
       {/* Water heaters in stock */}
       <Shelf title="Water heaters in stock" sub="Rinnai and Navien units, ready to ship." href="/collections/water-heaters" cta="View all water heaters" items={heaters} />
 
+      <FeatureSplit
+        reverse
+        image={{ sm: "/images/sections/water-heater-installation-sm.webp", lg: "/images/sections/water-heater-installation-lg.webp", alt: "Technician installing a wall-hung condensing tankless water heater", position: "center 30%" }}
+        eyebrow="Built for the install"
+        title="Water heaters installers trust."
+        text="Factory-new Rinnai and Navien tankless units, boilers and combis — the models plumbers and HVAC contractors fit every day, shipped free from U.S. stock with the full manufacturer warranty."
+        points={["Factory-new, sealed carton", "Full manufacturer warranty", "NG & LP · indoor & outdoor", "Help matching the right model"]}
+        cta={{ href: "/collections/water-heaters", label: "Shop water heaters" }}
+        link={{ href: "/collections/rinnai", label: "Browse Rinnai" }}
+      />
+
       {/* Refrigerant one per gas */}
       <Shelf title="Refrigerants in stock now" sub="One cylinder per refrigerant, ready to ship." href="/collections/refrigerants" cta="View all refrigerants" items={oneEach} />
 
-      {/* Dark band */}
-      <section className="mt-16 bg-dark text-dark-text">
-        <div className="container-site grid gap-10 py-14 lg:grid-cols-2 lg:items-center">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-ice">Built for HVAC & plumbing pros</p>
-            <h2 className="mt-3 font-display text-4xl font-medium text-white">Equipment and gas you can count on.</h2>
-            <p className="mt-4 max-w-lg text-dark-muted">
-              Factory-new water heaters and factory-sealed cylinders held in a U.S. warehouse, packed for the road and
-              backed by a 90-day return window.
-            </p>
-            <div className="mt-7 flex flex-wrap gap-3">
-              <Link href="/collections/water-heaters" className="btn-dark">Shop water heaters</Link>
-              <Link href="/about" className="btn border border-dark-rule text-white hover:bg-dark-2">Why Sarlkig →</Link>
-            </div>
-          </div>
-          <ul className="grid gap-px overflow-hidden rounded-[4px] border border-dark-rule bg-dark-rule sm:grid-cols-2">
-            {[
-              [Icon.Warehouse, "U.S. warehouse inventory"],
-              [Icon.Shield, "Secure, regulation-compliant packaging"],
-              [Icon.Truck, "Dispatched in 1 business day"],
-              [Icon.Phone, "Support by phone and email"],
-            ].map(([I, t]) => {
-              const C = I as typeof Icon.Truck;
-              return (
-                <li key={t as string} className="flex items-center gap-3 bg-dark-2 p-5 text-sm text-white">
-                  <C className="h-5 w-5 shrink-0 text-ice" />{t as string}
-                </li>
-              );
-            })}
-          </ul>
-        </div>
-      </section>
+      <FeatureSplit
+        image={{ sm: "/images/sections/refrigerants-warehouse-sm.webp", lg: "/images/sections/refrigerants-warehouse-lg.webp", alt: "R-410A, R-22, R-134a and R-404A refrigerant cylinders on a pallet in a warehouse", position: "center 70%" }}
+        eyebrow="Built for HVAC professionals"
+        title="Refrigerants you can count on."
+        text="Factory-sealed cylinders stocked in a U.S. warehouse, packed for safe transit and covered by our 90-day return window."
+        points={["U.S. warehouse inventory", "Secure cylinder packaging", "Dispatched in 1 business day", "Support by phone and email"]}
+        cta={{ href: "/collections/refrigerants", label: "Shop refrigerants" }}
+        link={{ href: "/about", label: "Why Sarlkig" }}
+      />
 
       <ReviewsSection />
 
-      {/* Bulk band */}
-      <section className="container-site pt-14">
-        <div className="flex flex-col items-start justify-between gap-5 rounded-panel border border-line bg-surface p-8 md:flex-row md:items-center">
-          <div>
-            <h2 className="h-display text-3xl">We also sell in bulk quantities</h2>
-            <p className="mt-1 text-ink-muted">Packs of 5, 10, 20, 30 and full 40-cylinder pallets — one line, one delivery.</p>
-          </div>
-          <Link href="/collections/bulk-pallets" className="btn-accent">Shop bulk quantities</Link>
-        </div>
-      </section>
+      <FeatureSplit
+        reverse
+        image={{ sm: "/images/sections/bulk-cartons-sm.webp", lg: "/images/sections/bulk-cartons-lg.webp", alt: "Cartons of R-410A, R-22 and R-404A refrigerant cylinders stacked in rows", position: "57% center" }}
+        eyebrow="Bulk & pallets"
+        title="Stock the shop, not just the van."
+        text="Packs of 5, 10, 20 and 30 cylinders and full 40-cylinder pallets ship together on one order line — delivered as freight by appointment."
+        points={["5 to 40 cylinders per line", "Freight delivery by appointment", "Ships together on one order", "Quotes within one business day"]}
+        cta={{ href: "/collections/bulk-pallets", label: "Shop bulk quantities" }}
+        link={{ href: "/contact", label: "Request a quote" }}
+      />
     </>
   );
 }

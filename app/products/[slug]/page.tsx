@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getProduct, money, productCollection, products, related } from "@/lib/products";
-import { site } from "@/lib/site";
+import { absUrl, site } from "@/lib/site";
 import ProductCard from "@/components/ProductCard";
 import Gallery from "@/components/pdp/Gallery";
 import BuyBox from "@/components/pdp/BuyBox";
@@ -56,7 +56,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
       mpn: p.mpn,
       ...(p.gtin ? { gtin: p.gtin } : {}),
       brand: { "@type": "Brand", name: p.brand },
-      image: images,
+      image: images.map(absUrl),
       description: p.description,
       category: col.name,
       offers: {

@@ -1,5 +1,5 @@
 import { productCollection, products } from "@/lib/products";
-import { site } from "@/lib/site";
+import { absUrl, site } from "@/lib/site";
 
 export const dynamic = "force-static";
 
@@ -23,14 +23,14 @@ const googleCategory: Record<string, string> = {
 export function GET() {
   const items = products
     .map((p) => {
-      const extra = (p.gallery ?? []).filter((u) => u !== p.image).slice(0, 10);
+      const extra = (p.gallery ?? []).filter((u) => u !== p.image).slice(0, 10).map(absUrl);
       return `
     <item>
       <g:id>${esc(p.sku)}</g:id>
       <g:title>${esc(p.title.slice(0, 150))}</g:title>
       <g:description>${esc(p.description)}</g:description>
       <g:link>${esc(`${site.url}/products/${p.slug}`)}</g:link>
-      <g:image_link>${esc(p.image)}</g:image_link>${extra.map((u) => `
+      <g:image_link>${esc(absUrl(p.image))}</g:image_link>${extra.map((u) => `
       <g:additional_image_link>${esc(u)}</g:additional_image_link>`).join("")}
       <g:availability>${p.availability === "in_stock" ? "in_stock" : "out_of_stock"}</g:availability>
       <g:price>${p.price.toFixed(2)} ${p.currency}</g:price>

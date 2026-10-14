@@ -1,4 +1,4 @@
-// TODO before launch: replace phone and address with the business's real details (Google Merchant verifies them).
+// Business details shown site-wide and in structured data (Google Merchant checks they match the Merchant Center profile).
 export const site = {
   name: "Sarlkig",
   legalName: "Sarlkig LLC",
@@ -8,12 +8,23 @@ export const site = {
   description:
     "Rinnai and Navien water heaters and boilers, genuine Honeywell refrigerants and factory-sealed refrigerant cylinders for trade buyers. Free shipping on every order, dispatched from the United States.",
   email: "contact@sarlkig.com",
-  phone: "+1 (000) 000-0000",
-  phoneHref: "tel:+10000000000",
-  address: "Business address — to be added",
+  phone: "+1 (224) 337-3481",
+  phoneHref: "tel:+12243373481",
+  address: "9474 Cherry Ave, Rapid City, MI 49676, USA",
+  postalAddress: {
+    "@type": "PostalAddress",
+    streetAddress: "9474 Cherry Ave",
+    addressLocality: "Rapid City",
+    addressRegion: "MI",
+    postalCode: "49676",
+    addressCountry: "US",
+  },
   hours: "Mon–Fri, 9:00 AM – 6:00 PM ET",
   policyUpdated: "13 October 2026",
 };
+
+/** Absolute URL for assets served from this site (feeds, structured data and Stripe need absolute URLs). */
+export const absUrl = (u: string) => (/^https?:\/\//.test(u) ? u : `${site.url}${u.startsWith("/") ? "" : "/"}${u}`);
 
 export const policies = [
   { slug: "shipping", title: "Shipping policy", short: "Shipping" },

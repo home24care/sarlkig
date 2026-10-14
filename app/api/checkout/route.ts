@@ -1,6 +1,6 @@
 import Stripe from "stripe";
 import { products } from "@/lib/products";
-import { site } from "@/lib/site";
+import { absUrl, site } from "@/lib/site";
 
 const bySku = new Map(products.map((p) => [p.sku, p]));
 const MAX_QTY = 100;
@@ -39,7 +39,7 @@ export async function POST(req: Request) {
         unit_amount: Math.round(p!.price * 100),
         product_data: {
           name: p!.title.slice(0, 250),
-          images: [p!.image],
+          images: [absUrl(p!.image)],
           metadata: { sku: p!.sku, mpn: p!.mpn, brand: p!.brand },
         },
       },
