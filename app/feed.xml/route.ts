@@ -22,6 +22,7 @@ const googleCategory: Record<string, string> = {
 
 export function GET() {
   const items = products
+    .filter((p) => !p.feedExclude)
     .map((p) => {
       const extra = (p.gallery ?? []).filter((u) => u !== p.image).slice(0, 10).map(absUrl);
       return `
@@ -36,7 +37,7 @@ export function GET() {
       <g:price>${p.price.toFixed(2)} ${p.currency}</g:price>
       <g:brand>${esc(p.brand)}</g:brand>
       <g:mpn>${esc(p.mpn)}</g:mpn>
-      ${p.gtin ? `<g:gtin>${esc(p.gtin)}</g:gtin>` : "<g:identifier_exists>no</g:identifier_exists>"}
+      ${p.gtin ? `<g:gtin>${esc(p.gtin)}</g:gtin>` : p.brand === site.name ? "<g:identifier_exists>no</g:identifier_exists>" : ""}
       <g:condition>new</g:condition>
       <g:google_product_category>${esc(googleCategory[p.category] ?? "Hardware")}</g:google_product_category>
       <g:product_type>${esc(productCollection(p).name)}</g:product_type>

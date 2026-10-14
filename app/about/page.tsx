@@ -7,7 +7,7 @@ export const metadata = { title: "About us", description: `Who ${site.name} is, 
 
 export default function AboutPage() {
   const stats = [
-    [String(products.length), "products in stock"],
+    [String(products.filter((p) => p.availability === "in_stock").length), "products in stock"],
     [String(inCollection("rinnai").length + inCollection("navien").length), "Rinnai & Navien units"],
     [String(gases.length), "refrigerant types"],
     ["1 day", "dispatch, Mon–Fri"],

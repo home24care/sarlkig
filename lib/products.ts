@@ -17,6 +17,8 @@ export type Product = {
   image: string;
   gallery?: string[];
   imageSource?: string;
+  /** Kept off the Google Shopping feed (e.g. no image meeting Google's 100×100 minimum yet). */
+  feedExclude?: boolean;
   shortDescription: string;
   description: string;
   specs: Record<string, string>;

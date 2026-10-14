@@ -3,7 +3,7 @@ export const site = {
   name: "Sarlkig",
   legalName: "Sarlkig LLC",
   domain: "sarlkig.com",
-  url: "https://sarlkig.com",
+  url: "https://www.sarlkig.com",
   tagline: "Water heaters, boilers and refrigerants, shipped from the US",
   description:
     "Rinnai and Navien water heaters and boilers, genuine Honeywell refrigerants and factory-sealed refrigerant cylinders for trade buyers. Free shipping on every order, dispatched from the United States.",
