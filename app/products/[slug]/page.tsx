@@ -7,10 +7,7 @@ import Gallery from "@/components/pdp/Gallery";
 import BuyBox from "@/components/pdp/BuyBox";
 import Tabs from "@/components/pdp/Tabs";
 import { Icon } from "@/components/icons";
-import Stars from "@/components/Stars";
 import PaymentIcons from "@/components/PaymentIcons";
-import ReviewsSection from "@/components/ReviewsSection";
-import { reviewStats } from "@/lib/reviews";
 
 export async function generateStaticParams() {
   return products.map((p) => ({ slug: p.slug }));
@@ -119,13 +116,6 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
           <div>
             <div className="micro">{p.brand}</div>
             <h1 className="h-display mt-2 text-[28px] leading-[1.15] md:text-[34px]">{p.title}</h1>
-            {reviewStats.count > 0 && (
-              <a href="#reviews" className="mt-3 flex items-center gap-2 text-[13px] text-ink-body">
-                <Stars rating={reviewStats.avg} />
-                <span><strong className="text-ink">{reviewStats.avg}</strong> out of 5</span>
-                <span className="text-accent underline underline-offset-2">{reviewStats.count} store reviews</span>
-              </a>
-            )}
 
             <div className="mt-5 flex items-baseline gap-3">
               <span className="tnum text-[30px] font-semibold text-ink">{money(p.price)}</span>
@@ -258,7 +248,6 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
         )}
       </div>
 
-      <ReviewsSection eyebrow="What people say about buying from us" storeNote gas={p.gas} />
     </div>
   );
 }

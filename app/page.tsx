@@ -1,10 +1,7 @@
 import Link from "next/link";
 import ProductCard from "@/components/ProductCard";
 import { Icon } from "@/components/icons";
-import Stars from "@/components/Stars";
-import ReviewsSection from "@/components/ReviewsSection";
 import FeatureSplit from "@/components/FeatureSplit";
-import { reviewStats } from "@/lib/reviews";
 import { products, gases, gasSlug, getProduct, inCollection } from "@/lib/products";
 
 const TRUST = [
@@ -41,12 +38,6 @@ export default function Home() {
               Rinnai and Navien tankless water heaters and boilers, genuine Honeywell refrigerants and
               factory-sealed cylinders — shipped from a U.S. warehouse with free shipping on every order.
             </p>
-            {reviewStats.count > 0 && (
-              <Link href="#reviews" className="mt-5 flex items-center gap-2.5 text-sm text-ink-body">
-                <Stars rating={reviewStats.avg} />
-                <span><strong className="text-ink">{reviewStats.avg}/5</strong> from {reviewStats.count} customer reviews</span>
-              </Link>
-            )}
             <div className="mt-7 grid grid-cols-2 gap-3 sm:flex">
               <Link href="/collections/water-heaters" className="btn-accent px-3 sm:px-6">Shop water heaters</Link>
               <Link href="/collections/refrigerants" className="btn-ghost px-3 sm:px-6">Shop refrigerants</Link>
@@ -146,8 +137,6 @@ export default function Home() {
         cta={{ href: "/collections/refrigerants", label: "Shop refrigerants" }}
         link={{ href: "/about", label: "Why Sarlkig" }}
       />
-
-      <ReviewsSection />
 
       <FeatureSplit
         reverse

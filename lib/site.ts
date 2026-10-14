@@ -20,7 +20,7 @@ export const site = {
     addressCountry: "US",
   },
   hours: "Mon–Fri, 9:00 AM – 6:00 PM ET",
-  policyUpdated: "13 October 2026",
+  policyUpdated: "14 October 2026",
 };
 
 /** Absolute URL for assets served from this site (feeds, structured data and Stripe need absolute URLs). */

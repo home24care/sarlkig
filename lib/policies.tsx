@@ -221,9 +221,7 @@ export const policyContent: Record<string, Policy> = {
         </ul>
         <p>We don&apos;t sell personal information.</p>
 
-        <h2>Reviews and content from partner stores</h2>
-        <p>Customer reviews on this site come from two sources. Some are from {site.name} customers, sent to us after their order. Others are from customers of our partner store Freonwell (<a href="https://freonwell.com" rel="noopener">freonwell.com</a>), collected there through the Judge.me review service and shown here with Freonwell&apos;s permission. Each partner review is labelled &ldquo;Freonwell&rdquo; and names the product the customer bought.</p>
-        <p>We show reviewers by first name and last initial only. Photos attached to partner reviews are displayed from Judge.me&apos;s servers. If you wrote one of these reviews and want it removed from this site, email <a href={`mailto:${site.email}`}>{site.email}</a> and we will take it down.</p>
+        <h2>Content from partner stores</h2>
         <p>Some product and warehouse photography is supplied by our partner stores <a href="https://sentaigas.com" rel="noopener">sentaigas.com</a>, <a href="https://mouchllc.com" rel="noopener">mouchllc.com</a> and <a href="https://freonwell.com" rel="noopener">freonwell.com</a>, and some is official manufacturer imagery from Rinnai, Navien and Honeywell. These images contain no personal information.</p>
 
         <h2>How long we keep it</h2>
@@ -256,9 +254,8 @@ export const policyContent: Record<string, Policy> = {
         <h2>Limitation of liability</h2>
         <p>Our liability for any order is limited to the amount you paid for it. We aren&apos;t liable for indirect or consequential loss — including lost profit, lost contracts, or damage to equipment — except where the law doesn&apos;t allow that limit. Nothing here limits liability for death or personal injury caused by negligence, or for fraud.</p>
 
-        <h2>Product images, reviews and content sources</h2>
+        <h2>Product images and content sources</h2>
         <p>Some product and warehouse photography on this site is supplied by our affiliated partner stores, <a href="https://sentaigas.com" rel="noopener">sentaigas.com</a>, <a href="https://mouchllc.com" rel="noopener">mouchllc.com</a> and <a href="https://freonwell.com" rel="noopener">freonwell.com</a>, and is used with their permission; other product images are official manufacturer imagery from Rinnai, Navien and Honeywell. Images show the model listed and may differ slightly from the unit shipped (for example in labelling or packaging).</p>
-        <p>Customer reviews include reviews from customers of our partner store Freonwell (<a href="https://freonwell.com" rel="noopener">freonwell.com</a>), labelled as such and naming the product reviewed. See the <Link href="/policies/privacy">privacy policy</Link> for how reviewer details are shown.</p>
 
         <h2>Intellectual property</h2>
         <p>The text, design and code of this site belong to {site.legalName} unless stated otherwise. Manufacturer names and product marks — including Rinnai, Navien and Honeywell — belong to their owners and are used only to identify the goods we sell. {site.name} is an independent retailer and is not affiliated with or endorsed by those manufacturers.</p>
