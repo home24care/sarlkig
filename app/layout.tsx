@@ -16,8 +16,8 @@ export const metadata: Metadata = {
   description: site.description,
   openGraph: { title: site.name, description: site.description, url: site.url, siteName: site.name, type: "website" },
   robots: { index: true, follow: true },
-  // Merchant Center / Search Console HTML-tag verification: set GOOGLE_SITE_VERIFICATION in Vercel to the tag's content value.
-  verification: process.env.GOOGLE_SITE_VERIFICATION ? { google: process.env.GOOGLE_SITE_VERIFICATION } : undefined,
+  // Merchant Center / Search Console HTML-tag verification.
+  verification: { google: process.env.GOOGLE_SITE_VERIFICATION || site.googleSiteVerification },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

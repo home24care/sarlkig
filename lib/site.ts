@@ -21,6 +21,8 @@ export const site = {
   },
   hours: "Mon–Fri, 9:00 AM – 6:00 PM ET",
   policyUpdated: "14 October 2026",
+  // Google Merchant Center HTML-tag verification (public value; GOOGLE_SITE_VERIFICATION env overrides it).
+  googleSiteVerification: "qsm8PNkb3jaBA7UYrfu6ciCrzoCvOq3SR3-S_2uv4A4",
 };
 
 /** Absolute URL for assets served from this site (feeds, structured data and Stripe need absolute URLs). */
